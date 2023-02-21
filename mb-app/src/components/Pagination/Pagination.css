@@ -1,0 +1,22 @@
+.pagination-nav{
+    margin: 50px auto;
+}
+
+.pagination-container{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    padding: 0;
+}
+
+.page-item{
+    border-radius: 5px;
+    background-color: var(--skyblue-color-cake);
+}
+.page-item:hover{
+    background-color: var(--main-color);
+}
+
+.page-link{
+    padding: 10px 20px;
+}

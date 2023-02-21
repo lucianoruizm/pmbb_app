@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+header {
+    height: 68px;
+    padding: 0 10px;
+    background-color: #f5f2fa;
+    overflow: hidden;
+    box-shadow: 0 0 3px 0 var(--grayish-blue);
+    z-index: 999;
+    position: fixed;
+    width: 100%;
+}
+
+li {
+    list-style: none;
+    font-family: 'Poppins', sans-serif;
+    cursor: pointer;
+}
+li:hover{
+    color: var(--grayish-blue);
+}
+
+.desktop-navbar{
+    display: none;
+}
+
+.header-navigation{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.img-logo{
+    height: 68px;
+    width: 100px;
+}
+
+.hide-menu{
+    display: none;
+}
+
+.show-menu {
+    display: flex;
+    z-index: 998;
+    opacity: 0.8;
+    background-color: var(--grayish-blue);
+    position: fixed;
+    width: 100%;
+}
+
+.modal-navbar {
+    height: 245px;
+    width: 100%;
+}
+
+.modal-navbar__items{
+    display: flex;
+    flex-direction: column;
+    margin: 68px 0 0 0;
+    padding: 0;
+    width: 100%;
+}
+.modal-navbar__items ul{
+    width: 100%;
+}
+.modal-navbar__items li{
+    cursor: pointer;
+    padding: 10px;
+}
+.modal-navbar__items li:hover {
+    color: var(--white);
+    background-color: var(--secondary-color-opacity);
+}
+
+@media (min-width: 992px){
+    .header-navigation{
+        justify-content: flex-start;
+        gap: 50px;
+    }
+    .desktop-navbar{
+        display: block;
+    }
+    .list-container{
+        display: flex;
+        gap: 50px;
+        padding: 0;
+        margin: 0;
+    }
+    .list-container a{
+        text-align: center;
+    }
+    .hamburger-react{
+        display: none;
+    }
+    .show-menu{
+        display: none;
+    }
+}

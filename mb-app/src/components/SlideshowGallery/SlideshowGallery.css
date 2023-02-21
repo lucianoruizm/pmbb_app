@@ -1,0 +1,49 @@
+.text-presentation-container {
+    background-color: var(--skyblue-color-cake);
+    opacity: .9;
+    padding: 15px 10px;
+    border-radius: 5px;
+}
+
+h3 {
+    font-size: 1.3em;
+}
+
+p {
+    font-size: 1em;
+}
+
+.w-100 {
+    margin: 60px auto auto;
+    height: 400px;
+}
+
+@media (min-width: 435px){
+    h3 {
+        font-size: 2em;
+    }
+    p {
+        font-size: 1em;
+    }
+    .w-100 {
+        margin-top: 40px;
+        height: 600px;
+    }
+}
+
+@media (min-width: 992px){
+    h3 {
+        font-size: 2.5em;
+        font-weight: bolder;
+    }
+    p {
+        font-size: 1.3em;
+    }
+    .w-100 {
+        margin-top: 0;
+        height: 660px;
+    }
+    .carousel-inner {
+        margin: auto;
+    }
+}

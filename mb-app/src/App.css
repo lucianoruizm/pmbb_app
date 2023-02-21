@@ -1,0 +1,26 @@
+:root {
+  --main-color: #ff0080;
+  --main-color-pink: #f55ea9;
+  --main-color-dark: #9c014ff5;
+  --skyblue-color-cake: #c6bfe1;
+  --secondary-color: #9d03fc;
+  --secondary-color-opacity: #9d03fc88;
+  --skyblue-color: #5bbbd9;
+  --grayish-blue: hsl(220, 14%, 75%);
+  --white: #f8feff;
+  --white-glass: #f8feff69;
+}
+
+a{
+  text-decoration: none;
+}
+
+h1{
+  text-align: center;
+  margin-top: 50px;
+}
+
+.App {
+  width: 100%;
+  position: relative;
+}
