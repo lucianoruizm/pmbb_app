@@ -1,4 +1,4 @@
-Proyecto front-end de productos presentados en cards utilizando React.
+FRONTEND:
 
 Funcionalidad:
 1. El usuario puede visualizar las cards de los diferentes productos.
@@ -14,6 +14,16 @@ Paquetes instalados:
 3. React-icons ---> npm install react-icons
 4. Hamburger-react ---> npm install hamburger-react
 
+BACKEND:
+Uso de FastAPI
+
+Instalación: pip install fastapi pip install "uvicorn[standard]" (local server)
+
+o instalar todo
+
+pip install fastapi[all]
+
+Iniciar servidor: uvicorn main:app --reload (donde main es el nombre del archivo python que se va a utilizar) Ingresar URL obtenida, por ejemplo en un explorador para ver los resultados.
 
 # Getting Started with Create React App
 
