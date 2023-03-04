@@ -2,7 +2,7 @@
 
 .env
 
-/venv-mb-app
+venv-mb-app/
 
 # dependencies
 /node_modules
