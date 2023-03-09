@@ -16,13 +16,29 @@ export const LandingPage = () => {
   const [productsPerPage] = useState(12);
   const [exist, setExist] = useState(false)
   
+  // useEffect(() => {
+  //   const fetchData = () => {
+  //     setLoading(true);
+  //     const res = [ ...productList];
+  //     updateFetchedData(res);
+  //     setExist(true);
+  //     setLoading(false);
+  //   }
+  //   fetchData()
+  // }, [])
+
   useEffect(() => {
-    const fetchData = () => {
-      setLoading(true);
-      const res = [ ...productList];
-      updateFetchedData(res);
-      setExist(true);
-      setLoading(false);
+    const fetchData = async() => {
+      try {
+        setLoading(true);
+        const response = await fetch('http://localhost:8000/products');
+        const data = await response.json();
+        updateFetchedData(data);
+        setExist(true);
+        setLoading(false);
+      } catch (error) {
+        console.log(error);
+      }
     }
     fetchData()
   }, [])

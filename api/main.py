@@ -1,5 +1,6 @@
 from fastapi import FastAPI, Depends, HTTPException, status
 from sqlalchemy.orm import Session 
+from fastapi.middleware.cors import CORSMiddleware
 
 from db.database import SessionLocal, engine
 from db.schemas import schemas
@@ -9,6 +10,19 @@ models.Base.metadata.create_all(bind=engine)
 
 app = FastAPI(  tags=["PMBB"],
                 responses={status.HTTP_404_NOT_FOUND: {"message": "Not found"}})
+
+origins = [
+    "http://127.0.0.1:3000", 'http://localhost:3000'
+]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
 
 #Dependecy
 def get_db():
