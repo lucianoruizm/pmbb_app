@@ -39,7 +39,8 @@ export const Card = ({ results, loading, exist }) => {
       }
       setFavs([...array])
 
-      localStorage.setItem("favorites", JSON.stringify(favs));
+      //localStorage.setItem("favorites", JSON.stringify(favs));
+      localStorage.setItem("favorites", favs);
 
       let storage = localStorage.getItem('favItem' + (props.id) || '0');
       if (storage == null) {

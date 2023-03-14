@@ -1,6 +1,7 @@
-from fastapi import FastAPI, Depends, HTTPException, status
+from fastapi import FastAPI, Depends, HTTPException, status, Request
 from sqlalchemy.orm import Session 
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.encoders import jsonable_encoder
 
 from db.database import SessionLocal, engine
 from db.schemas import schemas
@@ -64,4 +65,10 @@ async def post_product(product: schemas.Product, db: Session = Depends(get_db)):
     db.add(db_product)
     db.commit()
     db.refresh(db_product)
+    return db_product
+
+#'http://localhost:8000/products/?name=name'
+@app.get("/products/", status_code=status.HTTP_200_OK)
+async def product_query(request: Request, name: str, db: Session = Depends(get_db)):
+    db_product = db.query(models.Product).filter(models.Product.name.contains(name)).all()
     return db_product

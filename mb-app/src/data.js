@@ -82,7 +82,7 @@ export const data = [
       price: "$xxxx",
       size: "",
       img: "./09-img.jpg",
-      description: "Bolsa confeccionada con gabardina de algodón, ",
+      description: "Bolsa confeccionada con gabardina de algodón",
       category: "Others"
     },
     
@@ -225,7 +225,7 @@ export const data = [
   
     {
       id: 24,
-      name: "Caja 'Te quiero un monton",
+      name: "Caja 'Te quiero un monton'",
       price: "$xxxx",
       size: "",
       img: "./24-img.jpg",
