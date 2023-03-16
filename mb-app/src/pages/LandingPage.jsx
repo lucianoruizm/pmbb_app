@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
 import {Navbar} from "../components/Navbar/Navbar"
 import {Card} from "../components/Card/Card"
-import {Filter} from "../components/Filter/Filter"
+//import {Filter} from "../components/Filter/Filter"
 import {Search} from "../components/Search/Search"
 import {SlideshowGallery} from "../components/SlideshowGallery/SlideshowGallery"
 import { Pagination } from "../components/Pagination/Pagination";
-import { data as productList } from "../data";
+//import { data as productList } from "../data";
 import './LandingPage.css';
 
 export const LandingPage = () => {
@@ -28,12 +28,14 @@ export const LandingPage = () => {
   //   fetchData()
   // }, [])
 
+  let api = `http://localhost:8000/products/?name=${search}`;
+
   // Get de los productos
   useEffect(() => {
     const fetchData = async() => {
       try {
         setLoading(true);
-        const response = await fetch('http://localhost:8000/products');
+        const response = await fetch(api);
         const data = await response.json();
         updateFetchedData(data);
         setExist(true);
@@ -43,7 +45,7 @@ export const LandingPage = () => {
       }
     }
     fetchData()
-  }, [])
+  }, [api])
 
   // function handleSearch(e) {
   //   const query = e.target.value;
@@ -97,6 +99,7 @@ export const LandingPage = () => {
         </div>
         <h1 id="h1">Nuestros Productos</h1>
         {/* <Search onSearch={handleSearch} /> */}
+        <Search setSearch={setSearch} />
         <div className="filter-cards-containers">
           <div className="filter-container">
             {/* <Filter onFilter={handleFilter}/> */}

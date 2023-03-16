@@ -1,5 +1,6 @@
 from fastapi import FastAPI, Depends, HTTPException, status, Request
-from sqlalchemy.orm import Session 
+from sqlalchemy.orm import Session
+from sqlalchemy import func
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.encoders import jsonable_encoder
 
@@ -70,5 +71,6 @@ async def post_product(product: schemas.Product, db: Session = Depends(get_db)):
 #'http://localhost:8000/products/?name=name'
 @app.get("/products/", status_code=status.HTTP_200_OK)
 async def product_query(request: Request, name: str, db: Session = Depends(get_db)):
-    db_product = db.query(models.Product).filter(models.Product.name.contains(name)).all()
+    db_product = db.query(models.Product).filter(func.lower(models.Product.name).contains(func.lower(name))).all()
+    print(name)
     return db_product

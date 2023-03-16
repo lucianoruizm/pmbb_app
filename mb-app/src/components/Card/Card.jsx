@@ -64,10 +64,10 @@ export const Card = ({ results, loading, exist }) => {
           let { id, name, price, size, img, description } = x;
           return (
               <div 
-                key={id}
                 className="cards-container"
               >
-                <div 
+                <div
+                  key={id}
                   className="card" 
                 >
                     <img className="card-img" src={img} alt="img" onClick={() => getData(id, name, img)} />
