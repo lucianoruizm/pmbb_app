@@ -21,7 +21,7 @@ export const Card = ({ results, loading, exist }) => {
   }, []);
   
   if(loading) {
-    return <h3>Loading...</h3>
+    return <h3>Cargando...</h3>
   }
 
   const onAdd = (props) => {

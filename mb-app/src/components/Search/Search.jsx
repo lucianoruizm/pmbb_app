@@ -1,11 +1,7 @@
 //import { useState } from "react";
 import './Search.css';
 
-export const Search = ({ setSearch }) => {
-
-    let searchBtn = (e) => {
-        e.preventDefault();
-    }
+export const Search = ({ setSearch, page }) => {
 
     return (
      <div className="search-container">
@@ -15,13 +11,9 @@ export const Search = ({ setSearch }) => {
            type='text'
            onChange={(e) => {
             setSearch(e.target.value)
+            page(1);
            }}
          />
-         <button
-            onClick={searchBtn}
-         >
-          Buscar
-         </button>
      </div>
     )
 }

@@ -2,7 +2,7 @@ import './Filter.css';
 
 export const Filter = ({ onFilter }) => {
 
-    return (
+  return (
     <div className="btn-container">
         <button className="all-btn" onClick={onFilter} name="All" value="">Todo</button>
         <button className="diapers-btn" onClick={onFilter} name="Diapers" value="Diapers">Pañales</button>
