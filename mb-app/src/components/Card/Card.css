@@ -50,6 +50,12 @@
     cursor: pointer;
 }
 
+.loadingContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 @media (max-width: 380px){
     .card {
         width: 245px;

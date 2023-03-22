@@ -21,32 +21,33 @@ export const Card = ({ results, loading, exist }) => {
   }, []);
   
   if(loading) {
-    return <h3>Cargando...</h3>
+    return <div className="loadingContainer">
+      <h3>Cargando...</h3>
+    </div>
   }
 
   const onAdd = (props) => {
       let array = favs;
       let addArray = true;
       array.map((item, key) => {
-        if (item === props.id) {
+        if (item === props.id_product) {
           array.splice(key, 1);
           addArray = false;
         }
         return addArray;
       });
       if (addArray) {
-        array.push(props.id);
+        array.push(props.id_product);
       }
       setFavs([...array])
 
-      //localStorage.setItem("favorites", JSON.stringify(favs));
-      localStorage.setItem("favorites", favs);
+      localStorage.setItem("favorites", JSON.stringify(favs));
 
-      let storage = localStorage.getItem('favItem' + (props.id) || '0');
+      let storage = localStorage.getItem('favItem' + (props.id_product) || '0');
       if (storage == null) {
-        localStorage.setItem(('favItem' + (props.id)), JSON.stringify(props.x));
+        localStorage.setItem(('favItem' + (props.id_product)), JSON.stringify(props.x));
       } else {
-        localStorage.removeItem('favItem' + (props.id));
+        localStorage.removeItem('favItem' + (props.id_product));
       }
   }
   // Favourites end--
@@ -61,27 +62,27 @@ export const Card = ({ results, loading, exist }) => {
   let display;
   if (results && exist) {
       display = results.map((x) => {
-          let { id, name, price, size, img, description } = x;
+          let { id_product, name, price, size, img, description } = x;
           return (
               <div 
                 className="cards-container"
               >
                 <div
-                  key={id}
+                  key={id_product}
                   className="card" 
                 >
-                    <img className="card-img" src={img} alt="img" onClick={() => getData(id, name, img)} />
+                    <img className="card-img" src={img} alt="img" onClick={() => getData(id_product, name, img)} />
                     <div className="card-body">
                         <div className='heart'>
                             <div className="card-name">{name}</div>
-                              {favs.includes(id)? (
+                              {favs.includes(id_product)? (
                                     <BsSuitHeartFill
-                                      onClick={() => onAdd({ x, id })}
+                                      onClick={() => onAdd({ x, id_product })}
                                       style={{ color: 'red'}}
                                     />
                                   ) : (
                                         <BsSuitHeart
-                                          onClick={() => onAdd({ x, id })}
+                                          onClick={() => onAdd({ x, id_product })}
                                           style={{ color: 'red'}} 
                                         />
                               )}
