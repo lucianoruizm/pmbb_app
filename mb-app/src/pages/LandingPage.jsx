@@ -101,7 +101,6 @@ export const LandingPage = () => {
         <div id="gallery">
           <SlideshowGallery />
         </div>
-        <h1 id="h1">Nuestros Productos</h1>
         {/* <Search onSearch={handleSearch} /> */}
         <Search setSearch={setSearch} page={setCurrentPage} />
         <div className="filter-cards-containers">
