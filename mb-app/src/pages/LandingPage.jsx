@@ -3,7 +3,7 @@ import {Navbar} from "../components/Navbar/Navbar"
 import {Card} from "../components/Card/Card"
 import {Filter} from "../components/Filter/Filter"
 import {Search} from "../components/Search/Search"
-import {SlideshowGallery} from "../components/SlideshowGallery/SlideshowGallery"
+import {MainHeader} from "../components/MainHeader/MainHeader"
 import { Pagination } from "../components/Pagination/Pagination";
 //import { data as productList } from "../data";
 import './LandingPage.css';
@@ -99,7 +99,7 @@ export const LandingPage = () => {
     <div>
         <Navbar />
         <div id="gallery">
-          <SlideshowGallery />
+          <MainHeader />
         </div>
         {/* <Search onSearch={handleSearch} /> */}
         <Search setSearch={setSearch} page={setCurrentPage} />
