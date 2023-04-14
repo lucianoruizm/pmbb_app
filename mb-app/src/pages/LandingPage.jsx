@@ -87,6 +87,12 @@ export const LandingPage = () => {
     setCategory(query)
   }
 
+  function handleFilterDiv(event, value) {
+    const query = value;
+    setCurrentPage(1);
+    setCategory(query)
+  }
+
   // Get current products for pagination
   const indexOfLastProduct = currentPage * productsPerPage;
   const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
@@ -99,7 +105,7 @@ export const LandingPage = () => {
     <div>
         <Navbar />
         <div id="gallery">
-          <MainHeader />
+          <MainHeader onFilter={handleFilterDiv} />
         </div>
         {/* <Search onSearch={handleSearch} /> */}
         <Search setSearch={setSearch} page={setCurrentPage} />
