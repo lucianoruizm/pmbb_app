@@ -67,7 +67,7 @@ async def post_product(product: schemas.Product, db: Session = Depends(get_db)):
     db.refresh(db_product)
     return db_product
 
-#'http://localhost:8000/products/?name=name'
+#'http://localhost:8000/products/?name=name&category=category'
 @app.get("/products/", status_code=status.HTTP_200_OK)
 async def product_query(request: Request, name: str, category: str, db: Session = Depends(get_db)):
     db_product = db.query(models.Product).filter(and_(func.lower(models.Product.name).contains(func.lower(name)),

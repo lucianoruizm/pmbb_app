@@ -91,6 +91,11 @@ export const LandingPage = () => {
     const query = value;
     setCurrentPage(1);
     setCategory(query)
+    const element = document.getElementById('grid-products');
+    if (element) {
+      // 👇 Will scroll smoothly to the top of the next section
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
   }
 
   // Get current products for pagination
@@ -114,7 +119,7 @@ export const LandingPage = () => {
             {/* <Filter onFilter={handleFilter}/> */}
             <Filter onFilter={handleFilter}/>
           </div>
-          <div className="grid-container">
+          <div className="grid-container" id="grid-products">
             <Card results={currentProducts} loading={loading} exist={exist} />
           </div>
         </div>
