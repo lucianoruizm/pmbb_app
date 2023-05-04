@@ -93,7 +93,6 @@ export const LandingPage = () => {
     setCategory(query)
     const element = document.getElementById('grid-products');
     if (element) {
-      // 👇 Will scroll smoothly to the top of the next section
       element.scrollIntoView({ behavior: 'smooth' });
     }
   }
