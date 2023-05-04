@@ -25,6 +25,10 @@ pip install fastapi[all]
 
 Iniciar servidor: uvicorn main:app --reload (donde main es el nombre del archivo python que se va a utilizar) Ingresar URL obtenida, por ejemplo en un explorador para ver los resultados.
 
+Levantar servidor de app:
+    npm start
+    serve -s build (Si se hizo npm run build)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
